@@ -23,6 +23,10 @@ export interface MainMenuItemBaseProps {
   className?: string;
   /** Click handler */
   onClick?: () => void;
+  /** Mouse enter handler */
+  onMouseEnter?: () => void;
+  /** Mouse leave handler */
+  onMouseLeave?: () => void;
 }
 
 const MenuIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
@@ -104,6 +108,8 @@ export const MainMenuItemBase: React.FC<MainMenuItemBaseProps> = ({
   state = "Enabled",
   className = "",
   onClick,
+  onMouseEnter,
+  onMouseLeave,
 }) => {
   const isEnabled = state === "Enabled";
   const isHover = state === "Hover";
@@ -126,6 +132,8 @@ export const MainMenuItemBase: React.FC<MainMenuItemBaseProps> = ({
         className,
       ].join(" ")}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       tabIndex={0}
     >
       <div className="main-menu-item__content">
