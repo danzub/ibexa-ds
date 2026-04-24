@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import "./SidebarNav.css";
 import { CollapseButton } from "../CollapseButton";
 import { MainMenuItemBase } from "../MainMenuItemBase";
-import {
-  DashboardIcon,
-  UsersIcon,
-  BrainIcon,
-  ChartIcon,
-  FileTextIcon,
-  BellIcon,
-} from "../../showcase/icons";
+import { DashboardIcon } from "../../showcase/icons";
 
 /* Custom icons for this navigation */
+
+const OrganizationsIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="3" width="6" height="6" rx="1" stroke={color} strokeWidth="0.938" />
+    <rect x="11" y="3" width="6" height="6" rx="1" stroke={color} strokeWidth="0.938" />
+    <rect x="3" y="11" width="6" height="6" rx="1" stroke={color} strokeWidth="0.938" />
+    <rect x="11" y="11" width="6" height="6" rx="1" stroke={color} strokeWidth="0.938" />
+  </svg>
+);
 
 const AIModelsIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +65,7 @@ const KnowledgeBaseIcon: React.FC<{ color?: string }> = ({ color = "currentColor
   </svg>
 );
 
-const ReportsIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
+const NavReportsIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="3" y="2" width="14" height="16" rx="2" stroke={color} strokeWidth="0.938" />
     <path d="M6 6H14M6 9H14M6 12H10" stroke={color} strokeWidth="0.938" strokeLinecap="round" />
@@ -101,13 +103,13 @@ export interface SidebarNavProps {
 
 const defaultNavItems: NavItem[] = [
   { id: "dashboard", label: "Dashboard", icon: <DashboardIcon /> },
-  { id: "organizations", label: "Organizations", icon: <UsersIcon /> },
+  { id: "organizations", label: "Organizations", icon: <OrganizationsIcon /> },
   { id: "ai-models", label: "AI models", icon: <AIModelsIcon /> },
   { id: "mcp-servers", label: "MCP servers", icon: <MCPServerIcon /> },
   { id: "agents", label: "Agents", icon: <AgentIcon /> },
   { id: "budget", label: "Budget", icon: <BudgetIcon /> },
   { id: "knowledge-base", label: "Knowledge base", icon: <KnowledgeBaseIcon /> },
-  { id: "reports", label: "Reports", icon: <ReportsIcon /> },
+  { id: "reports", label: "Reports", icon: <NavReportsIcon /> },
   { id: "activity-log", label: "Activity log", icon: <ActivityLogIcon /> },
 ];
 

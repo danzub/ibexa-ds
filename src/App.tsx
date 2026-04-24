@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <div className="app">
       <SidebarNav selectedId={selectedId} onSelect={setSelectedId} />
       <main className="app__content">
-        <h1>Sidebar Navigation Demo</h1>
+        <h1>Sidebar Navigation</h1>
         <p>
           Current selection: <strong>{selectedId}</strong>
         </p>
