@@ -24,6 +24,8 @@ export interface MainMenuSubitemProps {
   className?: string;
   onClick?: () => void;
   onPinClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 function getTextColor(
@@ -91,6 +93,8 @@ export const MainMenuSubitem: React.FC<MainMenuSubitemProps> = ({
   className = "",
   onClick,
   onPinClick,
+  onMouseEnter,
+  onMouseLeave,
 }) => {
   const textColor = getTextColor(state, type);
   const pinType = getPinType(state);
@@ -121,6 +125,8 @@ export const MainMenuSubitem: React.FC<MainMenuSubitemProps> = ({
         className,
       ].join(" ")}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       tabIndex={0}
     >
       <div className="main-menu-subitem__content">

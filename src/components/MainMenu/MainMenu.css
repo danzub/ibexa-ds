@@ -1,22 +1,34 @@
 /* MainMenu.css
-   Design tokens match Figma node 341-51164 (i1 Design System)
-   Product unit = Ibexa, State = Default, Variant = Extended
+   Design tokens match Figma node 341-51164 & 3080-61103 (i1 Design System)
+   Interactive prototype with hover, selection, expand/collapse, context menu, pins.
 */
 
 .main-menu {
   --main-menu-bg: #0e1216;
   --main-menu-border-top: #323639;
-  --main-menu-width: 264px;
+  --main-menu-width-extended: 264px;
+  --main-menu-width-collapsed: 56px;
   --main-menu-padding-h: 8px;
   --main-menu-padding-v: 4px;
 
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: var(--main-menu-width);
   min-height: 100vh;
   background-color: var(--main-menu-bg);
   border-top: 1px solid var(--main-menu-border-top);
   box-sizing: border-box;
+  transition: width 0.2s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.main-menu--extended {
+  width: var(--main-menu-width-extended);
+}
+
+.main-menu--collapsed {
+  width: var(--main-menu-width-collapsed);
 }
 
 .main-menu__container {
@@ -35,7 +47,8 @@
   width: 100%;
 }
 
-.main-menu__items {
+.main-menu__items,
+.main-menu__pinned-list {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -47,5 +60,43 @@
 
 .main-menu__item {
   display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+/* Subitems indented under parent */
+.main-menu__subitems {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: main-menu-subitems-in 0.15s ease-out;
+}
+
+@keyframes main-menu-subitems-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Context menu fixed positioning */
+.main-menu__context-menu-wrapper {
+  position: fixed;
+  z-index: 1000;
+}
+
+/* Collapsed: hide labels in collapse button */
+.main-menu--collapsed .collapse-button--variant-collapse .collapse-button__label,
+.main-menu--collapsed .collapse-button--variant-collapsesecondary .collapse-button__label,
+.main-menu--collapsed .collapse-button--variant-collapsefocus .collapse-button__label {
+  display: none;
 }

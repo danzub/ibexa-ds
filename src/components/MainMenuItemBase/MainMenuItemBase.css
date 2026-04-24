@@ -116,6 +116,11 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.main-menu-item--collapsed-chevron .main-menu-item__chevron-container {
+  transform: rotate(-90deg);
 }
 
 .main-menu-item__chevron-svg {

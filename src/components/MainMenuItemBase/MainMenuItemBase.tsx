@@ -19,10 +19,16 @@ export interface MainMenuItemBaseProps {
   size?: MainMenuItemSize;
   /** Visual state */
   state?: MainMenuItemState;
+  /** Chevron rotated to indicate expanded/collapsed */
+  isExpanded?: boolean;
   /** Additional CSS class */
   className?: string;
   /** Click handler */
   onClick?: () => void;
+  /** Mouse enter handler */
+  onMouseEnter?: () => void;
+  /** Mouse leave handler */
+  onMouseLeave?: () => void;
 }
 
 const MenuIcon: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
@@ -102,8 +108,11 @@ export const MainMenuItemBase: React.FC<MainMenuItemBaseProps> = ({
   showText = true,
   size = "Extended",
   state = "Enabled",
+  isExpanded = true,
   className = "",
   onClick,
+  onMouseEnter,
+  onMouseLeave,
 }) => {
   const isEnabled = state === "Enabled";
   const isHover = state === "Hover";
@@ -123,9 +132,12 @@ export const MainMenuItemBase: React.FC<MainMenuItemBaseProps> = ({
         "main-menu-item",
         `main-menu-item--size-${size.toLowerCase()}`,
         `main-menu-item--state-${state.toLowerCase()}`,
+        isExpanded ? "main-menu-item--expanded" : "main-menu-item--collapsed-chevron",
         className,
       ].join(" ")}
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       tabIndex={0}
     >
       <div className="main-menu-item__content">
