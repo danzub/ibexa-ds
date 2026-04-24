@@ -1,0 +1,169 @@
+/* MainMenuItemBase.css
+   Design tokens match Figma node 341-51007 (i1 Design System)
+   Font: Mulish 14/21 Regular
+*/
+
+.main-menu-item {
+  --main-menu-item-height: 40px;
+  --main-menu-item-padding-rl: 12px;
+  --radius-navigation-item: 8px;
+  --background-secondary-hover: #262a2d;
+  --icon-primary-on-bg-fill: #ffffff;
+  --text-brand-primary-selected: #dc5685;
+  --text-primary-on-bg-fill: #ffffff;
+  --background-brand: #ba2157;
+  --radius-tooltip: 4px;
+  --paddings-zero: 0px;
+  --paddings-xxs: 4px;
+  --font-family: "Mulish", sans-serif;
+  --font-size: 14px;
+  --font-weight: 400;
+  --line-height: 21px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--main-menu-item-height);
+  padding: var(--paddings-zero) var(--main-menu-item-padding-rl);
+  border-radius: var(--radius-navigation-item);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  outline: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  box-sizing: border-box;
+}
+
+/* Size variants */
+.main-menu-item--size-extended {
+  width: 240px;
+}
+
+.main-menu-item--size-collapsed {
+  width: 40px;
+  justify-content: center;
+  padding: var(--paddings-zero);
+}
+
+/* State: Enabled */
+.main-menu-item--state-enabled {
+  background-color: transparent;
+  color: var(--icon-primary-on-bg-fill);
+}
+
+/* State: Hover */
+.main-menu-item--state-hover {
+  background-color: transparent;
+  color: var(--text-brand-primary-selected);
+}
+
+/* State: Selected */
+.main-menu-item--state-selected {
+  background-color: var(--background-secondary-hover);
+  color: var(--text-primary-on-bg-fill);
+}
+
+/* State: Opened */
+.main-menu-item--state-opened {
+  background-color: transparent;
+  color: var(--icon-primary-on-bg-fill);
+  border: 1px solid #391b79;
+}
+
+/* Content wrapper (icon + label) */
+.main-menu-item__content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Collapsed: no gap, centered */
+.main-menu-item--size-collapsed .main-menu-item__content {
+  gap: 0;
+}
+
+/* Icon container */
+.main-menu-item__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.main-menu-item__icon-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Label text */
+.main-menu-item__label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Chevron container */
+.main-menu-item__chevron-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.main-menu-item__chevron-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Tooltip (collapsed hover only) */
+.main-menu-item__tooltip {
+  position: absolute;
+  left: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  filter: drop-shadow(0px 2px 8px rgba(19, 28, 38, 0.15));
+}
+
+.main-menu-item__tooltip-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.main-menu-item__tooltip-text {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-brand);
+  border-radius: var(--radius-tooltip);
+  padding: var(--paddings-xxs) var(--main-menu-item-padding-rl);
+  white-space: nowrap;
+}
+
+.main-menu-item__tooltip-text span {
+  color: var(--text-primary-on-bg-fill);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+/* Keyboard focus */
+.main-menu-item:focus-visible {
+  outline: 2px solid var(--text-brand-primary-selected);
+  outline-offset: 2px;
+}

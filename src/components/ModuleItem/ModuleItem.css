@@ -1,0 +1,128 @@
+/* ModuleItem.css
+   Design tokens match Figma node 341-53117 (i1 Design System)
+*/
+
+.module-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 229px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #0e1216;
+  border: 1px solid transparent;
+  font-family: "Mulish", sans-serif;
+}
+
+.module-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ---- States ---- */
+.module-item--state-hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.module-item--state-selected {
+  background-color: #262a2d;
+}
+
+.module-item--state-focus {
+  background-color: #0e1216;
+  outline: none;
+}
+
+/* Focus border colors per module */
+.module-item--module-campaigns.module-item--state-focus {
+  border-color: #d66400;
+  box-shadow: 0 0 0 4px rgba(214, 100, 0, 0.25);
+}
+
+.module-item--module-reward.module-item--state-focus {
+  border-color: #ffc870;
+  box-shadow: 0 0 0 4px rgba(255, 200, 112, 0.25);
+}
+
+.module-item--module-insights.module-item--state-focus {
+  border-color: #76a5f8;
+  box-shadow: 0 0 0 4px rgba(118, 165, 248, 0.25);
+}
+
+.module-item--module-design.module-item--state-focus {
+  border-color: #ba91dd;
+  box-shadow: 0 0 0 4px rgba(186, 145, 221, 0.25);
+}
+
+.module-item--module-integrations.module-item--state-focus {
+  border-color: #ea5871;
+  box-shadow: 0 0 0 4px rgba(234, 88, 113, 0.25);
+}
+
+.module-item--module-privacy.module-item--state-focus {
+  border-color: #4cf0ca;
+  box-shadow: 0 0 0 4px rgba(76, 240, 202, 0.25);
+}
+
+.module-item--module-superadmin.module-item--state-focus {
+  border-color: #b4cefd;
+  box-shadow: 0 0 0 4px rgba(180, 206, 253, 0.25);
+}
+
+/* ---- Header (icon + label) ---- */
+.module-item__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Icon ---- */
+.module-item__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module-item__icon-wrap {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.module-item__icon-part {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---- Label ---- */
+.module-item__label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Description ---- */
+.module-item__description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Keyboard focus ---- */
+.module-item:focus-visible {
+  outline: 2px solid #ba2157;
+  outline-offset: 2px;
+}

@@ -1,0 +1,161 @@
+/* MainMenuSubitem.css
+   Design tokens match Figma node 341-51915 (i1 Design System)
+   Font: Mulish 14/21 Regular
+*/
+
+.main-menu-subitem {
+  --subitem-height: 36px;
+  --subitem-width: 195px;
+  --subitem-radius: 8px;
+  --subitem-font-family: "Mulish", sans-serif;
+  --subitem-font-size: 14px;
+  --subitem-font-weight: 400;
+  --subitem-line-height: 21px;
+
+  --color-text-primary: #ffffff;
+  --color-text-hover: #e07198;
+  --color-text-selected: #dc5685;
+  --color-focus-border: #ba2157;
+  --color-focus-shadow: rgba(186, 33, 87, 0.25);
+  --color-icon-muted: #b7b8b9;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--subitem-width);
+  height: var(--subitem-height);
+  border-radius: var(--subitem-radius);
+  cursor: pointer;
+  font-family: var(--subitem-font-family);
+  font-size: var(--subitem-font-size);
+  font-weight: var(--subitem-font-weight);
+  line-height: var(--subitem-line-height);
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+/* ---- Type: Main menu ---- */
+.main-menu-subitem--type-main-menu {
+  padding: 5px 12px 5px 20px;
+}
+
+.main-menu-subitem--type-main-menu.main-menu-subitem--state-focus-unpinned-text,
+.main-menu-subitem--type-main-menu.main-menu-subitem--state-focus-pinned-text {
+  padding: 5px 12px 5px 36px;
+}
+
+/* ---- Type: Context menu ---- */
+.main-menu-subitem--type-context-menu {
+  padding: 5px 12px;
+}
+
+.main-menu-subitem--type-context-menu.main-menu-subitem--state-focus-unpinned-text,
+.main-menu-subitem--type-context-menu.main-menu-subitem--state-focus-pinned-text {
+  padding: 5px 8px;
+}
+
+.main-menu-subitem--type-context-menu.main-menu-subitem--state-focus-unpinned-pin {
+  padding: 5px 12px 5px 10px;
+}
+
+/* ---- Content area ---- */
+.main-menu-subitem__content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ---- Drag handle ---- */
+.main-menu-subitem__drag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ---- Icon placeholder ---- */
+.main-menu-subitem__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+/* ---- Label ---- */
+.main-menu-subitem__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+/* ---- Text focus container ---- */
+.main-menu-subitem__text-focus {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px;
+  border: 1px solid var(--color-focus-border);
+  border-radius: var(--subitem-radius);
+  box-shadow: 0 0 0 4px var(--color-focus-shadow);
+  background-color: #0e1216;
+}
+
+.main-menu-subitem__text-focus .main-menu-subitem__label {
+  color: var(--color-text-primary);
+  flex: 1 1 auto;
+}
+
+/* ---- Inline pin button (inside text focus) ---- */
+.main-menu-subitem__inline-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ---- PinButton wrapper ---- */
+.pin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.pin-button--state-focus {
+  background-color: #0e1216;
+  border: 1px solid #ba2157;
+  box-shadow: 0 0 0 4px rgba(186, 33, 87, 0.25);
+}
+
+/* ---- Keyboard focus ---- */
+.main-menu-subitem:focus-visible {
+  outline: 2px solid var(--color-focus-border);
+  outline-offset: 2px;
+}

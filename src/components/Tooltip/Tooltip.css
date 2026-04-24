@@ -1,0 +1,103 @@
+/* Tooltip.css
+   Design tokens match Figma node 2421-40320 (i1 Design System)
+   Font: Mulish 14/21 Regular
+*/
+
+.tooltip {
+  --tooltip-padding-v: 4px;
+  --tooltip-padding-h: 12px;
+  --tooltip-radius: 4px;
+  --tooltip-font-family: "Mulish", sans-serif;
+  --tooltip-font-size: 14px;
+  --tooltip-font-weight: 400;
+  --tooltip-line-height: 21px;
+
+  --tooltip-brand-bg: #ba2157;
+  --tooltip-brand-text: #ffffff;
+  --tooltip-shadow: 0px 2px 8px rgba(19, 28, 38, 0.15);
+
+  --tooltip-alt-bg: #ffffff;
+  --tooltip-alt-text: #0e1216;
+  --tooltip-alt-border: 1px solid #cfd0d0;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ---- Default Tooltip ---- */
+.tooltip--type-tooltip {
+  filter: drop-shadow(0px 2px 8px rgba(19, 28, 38, 0.15));
+}
+
+.tooltip--type-tooltip .tooltip__content {
+  background-color: var(--tooltip-brand-bg);
+  color: var(--tooltip-brand-text);
+  border-radius: var(--tooltip-radius);
+  padding: var(--tooltip-padding-v) var(--tooltip-padding-h);
+}
+
+.tooltip--type-tooltip .tooltip__label {
+  color: var(--tooltip-brand-text);
+}
+
+.tooltip__arrow-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 4px;
+  flex-shrink: 0;
+}
+
+.tooltip__arrow-left-svg {
+  display: block;
+  width: 8px;
+  height: 4px;
+}
+
+/* ---- Alt Tooltip ---- */
+.tooltip--type-alt {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tooltip--type-alt .tooltip__content {
+  background-color: var(--tooltip-alt-bg);
+  color: var(--tooltip-alt-text);
+  border: var(--tooltip-alt-border);
+  border-radius: var(--tooltip-radius);
+  padding: var(--tooltip-padding-v) var(--tooltip-padding-h);
+}
+
+.tooltip--type-alt .tooltip__label {
+  color: var(--tooltip-alt-text);
+}
+
+.tooltip__arrow-top {
+  position: absolute;
+  top: -4.5px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9px;
+  height: 6px;
+  pointer-events: none;
+}
+
+.tooltip__arrow-top-svg {
+  display: block;
+  width: 9px;
+  height: 6px;
+}
+
+/* ---- Common ---- */
+.tooltip__label {
+  font-family: var(--tooltip-font-family);
+  font-size: var(--tooltip-font-size);
+  font-weight: var(--tooltip-font-weight);
+  line-height: var(--tooltip-line-height);
+  white-space: nowrap;
+}

@@ -1,0 +1,87 @@
+/* CollapseButton.css
+   Design tokens match Figma node 3044-27016 (i1 Design System)
+   Font: Mulish 14/21 Regular
+*/
+
+.collapse-button {
+  --cb-height: 32px;
+  --cb-full-width: 244px;
+  --cb-icon-width: 36px;
+  --cb-padding-h: 8px;
+  --cb-padding-h-narrow: 4px;
+  --cb-font-family: "Mulish", sans-serif;
+  --cb-font-size: 14px;
+  --cb-font-weight: 400;
+  --cb-line-height: 21px;
+  --cb-text-tertiary: #86888a;
+  --cb-text-secondary: #b7b8b9;
+  --cb-arrow-color: #6e7173;
+  --cb-focus-border: #ba2157;
+  --cb-focus-shadow: rgba(186, 33, 87, 0.25);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--cb-height);
+  padding: var(--cb-padding-h) 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--cb-font-family);
+  font-size: var(--cb-font-size);
+  font-weight: var(--cb-font-weight);
+  line-height: var(--cb-line-height);
+}
+
+/* ---- Variant: Collapse (full width) ---- */
+.collapse-button--variant-collapse,
+.collapse-button--variant-collapsesecondary,
+.collapse-button--variant-collapsefocus {
+  width: var(--cb-full-width);
+  justify-content: flex-end;
+  gap: 4px;
+  padding-left: var(--cb-padding-h);
+  padding-right: var(--cb-padding-h);
+  overflow: hidden;
+}
+
+/* ---- Variant: Expand (icon only) ---- */
+.collapse-button--variant-expand,
+.collapse-button--variant-expandfocus,
+.collapse-button--variant-expandiconfocus {
+  width: var(--cb-icon-width);
+  justify-content: center;
+  padding-left: var(--cb-padding-h);
+  padding-right: var(--cb-padding-h);
+  overflow: hidden;
+}
+
+/* ---- Variant: ExpandIconFocus ---- */
+.collapse-button--variant-expandiconfocus {
+  padding: 4px;
+}
+
+/* ---- Variant: CollapseFocus ---- */
+.collapse-button--variant-collapsefocus .collapse-button__focus-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--cb-focus-border);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px var(--cb-focus-shadow);
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+/* ---- Label ---- */
+.collapse-button__label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---- Keyboard focus ---- */
+.collapse-button:focus-visible {
+  outline: 2px solid var(--cb-focus-border);
+  outline-offset: 2px;
+}

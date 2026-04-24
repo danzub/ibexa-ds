@@ -1,0 +1,109 @@
+/* Showcase.css — Layout for the Main Menu Items implementation showcase */
+
+.showcase {
+  font-family: "Mulish", sans-serif;
+  color: #ffffff;
+  background-color: #0e1216;
+  min-height: 100vh;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.showcase__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.showcase__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin: 0 0 32px 0;
+  color: #86888a;
+}
+
+.showcase__subtitle strong {
+  color: #dc5685;
+  font-weight: 600;
+}
+
+.showcase__group {
+  margin-bottom: 48px;
+}
+
+.showcase__group-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #262a2d;
+  color: #ffffff;
+}
+
+.showcase__section {
+  margin-bottom: 32px;
+}
+
+.showcase__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b7b8b9;
+}
+
+.showcase__grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.showcase__column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.showcase__state-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #86888a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-left: 4px;
+}
+
+.showcase__items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Scrollbar styling */
+.showcase__grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.showcase__grid::-webkit-scrollbar-track {
+  background: #1a1f24;
+  border-radius: 3px;
+}
+
+.showcase__grid::-webkit-scrollbar-thumb {
+  background: #3a3f44;
+  border-radius: 3px;
+}
+
+.showcase__grid::-webkit-scrollbar-thumb:hover {
+  background: #4a4f54;
+}

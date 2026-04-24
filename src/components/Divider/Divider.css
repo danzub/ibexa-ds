@@ -1,0 +1,99 @@
+/* Divider.css
+   Design tokens match Figma node 2037-30831 (i1 Design System)
+   Font: Mulish 12/15 Regular
+*/
+
+.divider {
+  --divider-width: 244px;
+  --divider-font-family: "Mulish", sans-serif;
+  --divider-font-size: 12px;
+  --divider-font-weight: 400;
+  --divider-line-height: 15px;
+  --divider-text-color: #86888a;
+  --divider-border-color: #323639;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: var(--divider-width);
+  box-sizing: border-box;
+}
+
+/* ---- Type: First / Next (label) ---- */
+.divider--type-first,
+.divider--type-next {
+  height: 21px;
+}
+
+/* ---- Type: Line ---- */
+.divider--type-line {
+  height: 1px;
+}
+
+/* ---- Inner wrapper ---- */
+.divider__inner {
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ---- Location: Main menu ---- */
+.divider--location-main-menu .divider__inner {
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 12px;
+}
+
+.divider--location-main-menu.divider--type-line .divider__inner {
+  align-items: flex-start;
+  padding-left: 40px;
+  padding-right: 12px;
+}
+
+/* ---- Location: Context menu ---- */
+.divider--location-context-menu .divider__inner {
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.divider--location-context-menu.divider--type-line .divider__inner {
+  align-items: flex-start;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* ---- Text container ---- */
+.divider__text {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
+.divider--type-next .divider__text {
+  border-top: 1px solid var(--divider-border-color);
+}
+
+/* ---- Label ---- */
+.divider__label {
+  font-family: var(--divider-font-family);
+  font-size: var(--divider-font-size);
+  font-weight: var(--divider-font-weight);
+  line-height: var(--divider-line-height);
+  color: var(--divider-text-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---- Line only ---- */
+.divider__line {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 24px;
+  border-top: 1px solid var(--divider-border-color);
+}

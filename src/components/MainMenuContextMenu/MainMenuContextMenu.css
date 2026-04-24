@@ -1,0 +1,137 @@
+/* MainMenuContextMenu.css
+   Design tokens match Figma node 2605-31293 (i1 Design System)
+*/
+
+.main-menu-context-menu {
+  --ctx-bg: #0e1216;
+  --ctx-padding: 8px;
+  --ctx-radius: 8px;
+  --ctx-border-module: 1px solid #d66400;
+  --ctx-item-radius: 8px;
+  --ctx-item-height: 36px;
+  --ctx-item-padding-h: 12px;
+  --ctx-item-padding-v: 5px;
+  --ctx-font-family: "Mulish", sans-serif;
+  --ctx-text-primary: #ffffff;
+  --ctx-text-tertiary: #86888a;
+
+  background-color: var(--ctx-bg);
+  border-radius: var(--ctx-radius);
+  padding: var(--ctx-padding);
+  box-sizing: border-box;
+}
+
+.main-menu-context-menu--type-main-menu {
+  width: 200px;
+}
+
+.main-menu-context-menu--type-module {
+  width: 245px;
+  border: var(--ctx-border-module);
+}
+
+.main-menu-context-menu__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__container {
+  gap: 4px;
+}
+
+/* ---- Item (Main menu) ---- */
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  height: var(--ctx-item-height);
+  padding: var(--ctx-item-padding-v) var(--ctx-item-padding-h);
+  border-radius: var(--ctx-item-radius);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__item-label {
+  font-family: var(--ctx-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--ctx-text-primary);
+  white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__pin {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.main-menu-context-menu--type-main-menu .main-menu-context-menu__item:hover .main-menu-context-menu__pin {
+  opacity: 1;
+}
+
+/* ---- Item (Module) ---- */
+.main-menu-context-menu--type-module .main-menu-context-menu__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px;
+  border-radius: var(--ctx-item-radius);
+  cursor: pointer;
+  width: 229px;
+  box-sizing: border-box;
+}
+
+.main-menu-context-menu--type-module .main-menu-context-menu__item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.main-menu-context-menu--type-module .main-menu-context-menu__item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-menu-context-menu--type-module .main-menu-context-menu__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.main-menu-context-menu--type-module .main-menu-context-menu__item-label {
+  font-family: var(--ctx-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--ctx-text-primary);
+  white-space: nowrap;
+}
+
+.main-menu-context-menu--type-module .main-menu-context-menu__item-description {
+  font-family: var(--ctx-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: var(--ctx-text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- Keyboard focus ---- */
+.main-menu-context-menu__item:focus-visible {
+  outline: 2px solid #ba2157;
+  outline-offset: 2px;
+}
