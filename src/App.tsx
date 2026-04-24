@@ -6,7 +6,7 @@ const App: React.FC = () => {
   const [selectedId, setSelectedId] = useState("dashboard");
   
   useEffect(() => {
-    console.log("[v0] App mounted successfully");
+    console.log("[v0] App mounted - SidebarNav demo ready");
   }, []);
 
   return (
