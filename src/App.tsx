@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SidebarNav } from "./components/SidebarNav";
 import "./App.css";
 
 const App: React.FC = () => {
   const [selectedId, setSelectedId] = useState("dashboard");
+  
+  useEffect(() => {
+    console.log("[v0] App mounted successfully");
+  }, []);
 
   return (
     <div className="app">
