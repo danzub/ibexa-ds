@@ -1,0 +1,51 @@
+/* MainMenu.css
+   Design tokens match Figma node 341-51164 (i1 Design System)
+   Product unit = Ibexa, State = Default, Variant = Extended
+*/
+
+.main-menu {
+  --main-menu-bg: #0e1216;
+  --main-menu-border-top: #323639;
+  --main-menu-width: 264px;
+  --main-menu-padding-h: 8px;
+  --main-menu-padding-v: 4px;
+
+  display: flex;
+  flex-direction: column;
+  width: var(--main-menu-width);
+  min-height: 100vh;
+  background-color: var(--main-menu-bg);
+  border-top: 1px solid var(--main-menu-border-top);
+  box-sizing: border-box;
+}
+
+.main-menu__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--main-menu-padding-v) var(--main-menu-padding-h);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-menu__divider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.main-menu__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.main-menu__item {
+  display: flex;
+  width: 100%;
+}

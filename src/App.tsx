@@ -1,8 +1,8 @@
 import React from "react";
-import Showcase from "./showcase/Showcase";
+import MainMenu from "./components/MainMenu/MainMenu";
 
 const App: React.FC = () => {
-  return <Showcase />;
+  return <MainMenu />;
 };
 
 export default App;

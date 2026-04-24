@@ -7,7 +7,7 @@ export interface PinButtonProps {
   type?: PinType;
   state?: PinState;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const UnpinnedIcon: React.FC<{ color?: string }> = ({ color = "#B7B8B9" }) => (
